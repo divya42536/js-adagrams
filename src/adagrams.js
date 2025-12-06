@@ -18,10 +18,14 @@ export const getLetterPool = () => {
   const pool = [];
   for (const letter in LETTER_POOL) {
     const freq = LETTER_POOL[letter];
-    for (let i = 0 ; i < freq; i++) {
+
+    let count = 0;
+    while (count < freq) {
       pool.push(letter);
+      count++;
     }
   }
+
   return pool;
 };
 const drawRandomLetterFromPool = (pool) => {
